@@ -1,0 +1,13 @@
+class Solution:
+    def maxSatisfaction(self, satisfaction: List[int]) -> int:
+        satisfaction.sort(reverse=True)
+        cur_sum , ans = 0,0
+        for curr in satisfaction:
+            cur_sum += curr
+
+            //skip in case of negative result
+            if(cur_sum < 0):
+                break
+
+            ans += cur_sum
+        return ans
